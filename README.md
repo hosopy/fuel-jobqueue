@@ -1,4 +1,4 @@
 fuel-jobqueue
 =============
 
-Jobqueue package for FuelPHP
+Jobqueue package for FuelPHP.
