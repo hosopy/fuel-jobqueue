@@ -20,23 +20,27 @@ Sorry under construction...
 
 ### Using git submodule ###
 
-    $ cd FUEL_ROOT
-    $ git submodule add git@github.com:hosopy/fuel-jobqueue.git fuel/packages/fuel-jobqueue
-    $ cd fuel/packages/fuel-jobqueue
-    $ php ../../../composer.phar install
+```
+$ cd FUEL_ROOT
+$ git submodule add git@github.com:hosopy/fuel-jobqueue.git fuel/packages/fuel-jobqueue
+$ cd fuel/packages/fuel-jobqueue
+$ php ../../../composer.phar install
+```
 
 ### Manual ###
 
-    $ cd PKGPATH
-    $ git clone git@github.com:hosopy/fuel-jobqueue.git
-    $ cd fuel-jobqueue
-    $ php ../../../composer.phar install
+```
+$ cd PKGPATH
+$ git clone git@github.com:hosopy/fuel-jobqueue.git
+$ cd fuel-jobqueue
+$ php ../../../composer.phar install
+```
 
 ## Usage ##
 
 ### 1. Enable package ###
 
-```php:fuel/app/config/config.php
+```php
 'always_load' => array(
     'packages' => array(
         'fuel-jobqueue',
@@ -48,13 +52,13 @@ Sorry under construction...
 Copy default configuration file to your app/config directory.
 
 ```
-    $ cp fuel/packages/fuel-jobqueue/config/jobqueue.php fuel/app/config
+$ cp fuel/packages/fuel-jobqueue/config/jobqueue.php fuel/app/config
 ```
 
 If you want to run beanstalkd in other machine or port, edit configuration.
 For the moment, keep default configuration.
 
-```php:fuel/app/config/jobqueue.php
+```php
 return array(
     // default connection name
     'default' => 'default_connection',
@@ -75,7 +79,7 @@ return array(
 Currently, fuel-jobqueue uses [beanstalkd](http://kr.github.io/beanstalkd/) as a backend of queueing.
 If beanstalkd is not installed in your machine, install it first.
 
-```sh
+```
 # Mac OSX : homebrew
 $ brew install beanstalkd
 $ beanstalkd
@@ -83,11 +87,10 @@ $ beanstalkd
 
 ### 4. Define Job ###
 
-Define your job handler class.
+Define your job handler class in `fuel/app/classes/myjob.php`.
 
-```php:fuel/app/classes/myjob.php
+```php
 <?php
-
 class Myjob
 {
     // [IMPORTANT] Requires 'fire' method as a entry point.
@@ -104,7 +107,7 @@ class Myjob
 
 In your controller, call `\Jobqueue\Queue::push($job, $data)` to push a new job.
 
-```php:fuel/app/classes/controller/welcome.php
+```php
 class Controller_Welcome extends Controller
 {
     public function action_index()
@@ -123,7 +126,7 @@ class Controller_Welcome extends Controller
 
 Queued jobs cannot be executed untill the worker process pop it from the queue.
 
-```sh
+```
 $ cd FUEL_ROOT
 $ php oil refine jqworker:listen --connection=default_connection --queue=jobqueue
 ```
