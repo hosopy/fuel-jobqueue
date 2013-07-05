@@ -9,7 +9,7 @@
  * @link       https://github.com/hosopy/fuel-jobqueue
  *
  * Usage:
- *   $ php oil refine jobqueue::worker:help
+ *   $ php oil refine jqworker:help
  */
 namespace Fuel\Tasks;
 
@@ -43,7 +43,7 @@ class Jqworker
 	}
 
 	/**
-	 * Implementation of jobqueue::worker:work
+	 * Implementation of jqworker:work
 	 */
 	public static function work()
 	{
@@ -56,7 +56,7 @@ class Jqworker
 	}
 
 	/**
-	 * Implementation of jobqueue::worker:listen
+	 * Implementation of jqworker:listen
 	 */
 	public static function listen()
 	{
@@ -74,9 +74,9 @@ class Jqworker
 	{
 		echo <<<HELP
             Usage:
-                php oil refine jobqueue::worker:work      Process the next job on a queue.
-                php oil refine jobqueue::worker:listen    Listen to a given queue.
-                php oil refine jobqueue::worker:help      Show help.
+                php oil refine jqworker:work      Process the next job on a queue.
+                php oil refine jqworker:listen    Listen to a given queue.
+                php oil refine jqworker:help      Show help.
 
             Options:
                 [work]
