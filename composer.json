@@ -1,0 +1,20 @@
+{
+    "name": "hosopy/fuel-jobqueue",
+    "type": "fuel-package",
+    "description": "FuelPHP Jobqueue Package",
+    "keywords": ["FuelPHP", "jobqueue"],
+    "homepage": "https://github.com/hosopy/fuel-jobqueue",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Keishi HOSOBA",
+            "homepage": "https://github.com/hosopy"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "composer/installers": "*",
+        "symfony/process": "2.3",
+        "pda/pheanstalk": "*"
+    }
+}
