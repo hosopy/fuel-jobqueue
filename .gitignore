@@ -1,2 +1,2 @@
-fuel/app/logs/*/*/*
-fuel/app/cache/*/*
+/vendor
+/composer.lock
