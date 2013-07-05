@@ -39,13 +39,6 @@ abstract class Queue_Base
 	 */
 	protected function create_payload($job, $data = '')
 	{
-		if ($job instanceof Closure)
-		{
-			return json_encode($this->create_closure_payload($job, $data));
-		}
-		else
-		{
-			return json_encode(array('job' => $job, 'data' => $data));
-		}
+		return json_encode(array('job' => $job, 'data' => $data));
 	}
 }
