@@ -10,9 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Queue_Manager;
-use Jobqueue\Job_Driver;
-
 class Worker
 {
 	/**

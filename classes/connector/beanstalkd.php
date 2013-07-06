@@ -10,7 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Queue_Beanstalkd;
 use Pheanstalk_Pheanstalk as Pheanstalk;
 
 class Connector_Beanstalkd implements Connector_Driver

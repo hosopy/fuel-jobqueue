@@ -12,9 +12,6 @@ namespace Jobqueue;
 
 use Pheanstalk_Job;
 use Pheanstalk_Pheanstalk as Pheanstalk;
-use Jobqueue\Queue_Driver;
-use Jobqueue\Queue_Base;
-use Jobqueue\Job_Beanstalkd;
 
 class Queue_Beanstalkd extends Queue_Base implements Queue_Driver
 {

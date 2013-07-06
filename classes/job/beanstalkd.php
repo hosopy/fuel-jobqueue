@@ -10,9 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Context;
-use Jobqueue\Job_Driver;
-use Jobqueue\Job_Base;
 use Pheanstalk_Pheanstalk as Pheanstalk;
 use Pheanstalk_Job;
 

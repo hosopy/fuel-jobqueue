@@ -10,8 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Context;
-
 abstract class Job_Base
 {
 	/**

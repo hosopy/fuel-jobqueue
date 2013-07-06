@@ -10,11 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Context;
-use Jobqueue\Queue_Manager;
-use Jobqueue\Worker;
-use Jobqueue\Connector_Beanstalkd;
-
 class Queue
 {
 	/**

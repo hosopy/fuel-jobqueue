@@ -10,7 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Context;
 use \Symfony\Component\Process\Process;
 
 class Listener

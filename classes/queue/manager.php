@@ -10,8 +10,6 @@
  */
 namespace Jobqueue;
 
-use Jobqueue\Context;
-
 class Queue_Manager
 {
 	/**
