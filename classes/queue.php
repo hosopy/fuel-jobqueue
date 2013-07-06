@@ -92,7 +92,7 @@ class Queue
 	 * @param  string  $queue
 	 * @return void
 	 */
-	public static function later($connection, $delay, $job, $data = '', $queue = null)
+	public static function later($delay, $job, $data = '', $queue = null)
 	{
 		static::instance()->manager->connection()->later($delay, $job, $data, $queue);
 	}
