@@ -14,27 +14,30 @@ Jobqueue package for FuelPHP.
 
 ## Installation ##
 
-### Using composer ###
+### A: Using composer ###
 
-Sorry under construction...
+Add required package to your `composer.json`.
 
-### Using git submodule ###
+```json
+    ...
+    "require": {
+        ...
+        "hosopy/fuel-jobqueue": "dev-master",
+        ...
+    },
+    ...
+```
+
+And run composer installer.
 
 ```
-$ cd FUEL_ROOT
-$ git submodule add git@github.com:hosopy/fuel-jobqueue.git fuel/packages/fuel-jobqueue
-$ cd fuel/packages/fuel-jobqueue
-$ php ../../../composer.phar install
+$ php composer.phar install
 ```
 
-### Manual ###
+### B: Manual ###
 
-```
-$ cd PKGPATH
-$ git clone git@github.com:hosopy/fuel-jobqueue.git
-$ cd fuel-jobqueue
-$ php ../../../composer.phar install
-```
+Download zip archive or clone this repository, and extract to `fuel/app/packages/fuel-jobqueue`.
+
 
 ## Usage ##
 
@@ -47,6 +50,7 @@ $ php ../../../composer.phar install
         ...
 ```
 
+
 ### 2. Configuration ###
 
 Copy default configuration file to your app/config directory.
@@ -56,6 +60,7 @@ $ cp fuel/packages/fuel-jobqueue/config/jobqueue.php fuel/app/config
 ```
 
 If you want to run beanstalkd in other machine or port, edit configuration.
+
 For the moment, keep default configuration.
 
 ```php
@@ -74,16 +79,26 @@ return array(
 );
 ```
 
+
 ### 3. Install and run beanstalkd ###
 
 Currently, fuel-jobqueue uses [beanstalkd](http://kr.github.io/beanstalkd/) as a backend of queueing.
+
 If beanstalkd is not installed in your machine, install it first.
 
 ```
-# Mac OSX : homebrew
+# Example: homebrew (Mac)
 $ brew install beanstalkd
 $ beanstalkd
 ```
+
+```
+# Example: Ubuntu
+$ sudo apt-get install beanstalkd
+```
+
+If you want to know about beanstalkd more, see [](https://github.com/kr/beanstalkd).
+
 
 ### 4. Define Job ###
 
@@ -101,7 +116,6 @@ class Myjob
     }
 }
 ```
-
 
 ### 5. Queueing Job ###
 
@@ -121,7 +135,6 @@ class Controller_Welcome extends Controller
     ...
 ```
 
-
 ### 6. Run worker task ###
 
 Queued jobs cannot be executed untill the worker process pop it from the queue.
@@ -134,6 +147,7 @@ $ php oil refine jqworker:listen --connection=default_connection --queue=jobqueu
 ### 7. Execute controller action ###
 
 Now, we are ready for queueing!
+
 Execute your controller action.
 
 
@@ -141,13 +155,16 @@ Execute your controller action.
 
 Sorry under construction...
 
+
 ## Job ##
 
 Sorry under construction...
 
+
 ## Queue ##
 
 Sorry under construction...
+
 
 ## Task ##
 
