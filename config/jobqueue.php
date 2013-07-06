@@ -27,6 +27,9 @@ return array(
 			'port'     => '11300',
 			'queue'    => 'jobqueue',
 		),
+		'debug_connection' => array(
+			'driver'   => 'sync',
+		),
 		/*
 		 in the future...
 		'resque_connection' => array(

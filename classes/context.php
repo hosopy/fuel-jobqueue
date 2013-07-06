@@ -120,6 +120,7 @@ class Context
 	public function get_connector_resolvers()
 	{
 		return array(
+			'sync'       => function () { return new Connector_Sync; },
 			'beanstalkd' => function () { return new Connector_Beanstalkd; },
 		);
 	}
