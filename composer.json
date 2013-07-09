@@ -2,7 +2,7 @@
     "name": "hosopy/fuel-jobqueue",
     "type": "fuel-package",
     "description": "FuelPHP Jobqueue Package",
-    "keywords": ["FuelPHP", "jobqueue"],
+    "keywords": ["FuelPHP", "jobqueue", "job", "queue"],
     "homepage": "https://github.com/hosopy/fuel-jobqueue",
     "license": "MIT",
     "authors": [
